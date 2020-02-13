@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AACA,6BACI,eACJ","file":"16.e5393196.chunk.css","sourcesContent":["/** 页面样式  */\r\n.my-list .spe .am-list-extra {\r\n    flex-basis: initial;\r\n}\r\n"]}

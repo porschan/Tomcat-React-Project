@@ -1,0 +1,8 @@
+{
+  "extends": "umi",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "legacyDecorators": false
+    }
+  }
+}

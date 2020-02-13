@@ -1,0 +1,23 @@
+import React from 'react';
+import {Redirect, Router, Switch} from 'dva/router';
+import Dashboard from './routes/dashboard';
+import TaskDetail from './routes/taskDetail';
+import DeviceReporting from './routes/deviceReporting';
+import TaskList from './routes/taskList';
+
+
+function RouterConfig({history, app}) {
+    return (
+        <Router history={history}>
+            <Switch>
+                {Dashboard(app)}
+                {TaskDetail(app)}
+                {DeviceReporting(app)}
+                {TaskList(app)}
+                <Redirect from="/" to="/dashboard"/> {/*打开默认进入应用面板*/}
+            </Switch>
+        </Router>
+    );
+}
+
+export default RouterConfig;

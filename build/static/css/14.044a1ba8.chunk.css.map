@@ -1,0 +1,1 @@
+{"version":3,"sources":["common.css"],"names":[],"mappings":"AAAA,oEACE,qCACF,CAEA,kCACE,sCACF","file":"14.044a1ba8.chunk.css","sourcesContent":[".am-grid.am-grid-line .am-flexbox .am-flexbox-item:not(:last-child) {\n  border-right: 1px solid #ddd !important;\n}\n\n.am-grid.am-grid-line .am-flexbox {\n  border-bottom: 1px solid #ddd !important;\n}\n"]}

@@ -1,0 +1,70 @@
+import React, { Component } from 'react';
+import {connect} from 'dva';
+import {Grid} from 'antd-mobile';
+import './index.css';
+import 'assets/common.css';
+import queryTaskIcon from 'assets/icons/inspection.png';
+import deviceReportingIcon from 'assets/icons/tool-hardware.png';
+import myTaskIcon from 'assets/icons/manage-order.png';
+import goodIcon from 'assets/icons/good.png';
+import {hashLocation, isNotBlank} from "../../../utils/commonUtils";
+
+
+function Index() {
+
+    const gridData = [
+        {
+            icon: queryTaskIcon,
+            text: '查询工单',
+            key: 'queryTask',
+            url: '/taskDetail'
+        },
+        {
+            icon: deviceReportingIcon,
+            text: '我要报障',
+            key: 'reporting',
+            url: '/deviceReporting'
+        },
+        {
+            icon: myTaskIcon,
+            text: '我的工单',
+            key: 'myTask',
+            url: '/taskList'
+        },
+        {
+            icon: goodIcon,
+            text: '确认评价',
+            key: 'confirmEvaluation',
+            url: ''
+        },
+    ];
+
+    // 每个grid item 的样式
+    let gridRender = dataItem => (
+        <div style={{padding: '12.5px'}}>
+            <img className={'grid_item_icon'} src={dataItem.icon} alt=""/>
+            <div className={'grid_item_text'}>
+                <span>{dataItem.text}</span>
+            </div>
+        </div>
+    );
+
+    let gridClick = (item, index) => {
+        console.log(item.key);
+        console.log(index);
+        if (isNotBlank(item.url)) {
+            hashLocation(item.url);
+        }
+    };
+
+    return (
+        <div>
+            <div className={"panel_head"}>应用面板</div>
+            <Grid data={gridData} columnNum={3} onClick={gridClick} renderItem={gridRender}/>
+        </div>
+    );
+}
+
+Index.propTypes = {};
+
+export default connect()(Index);
